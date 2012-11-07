@@ -16,10 +16,23 @@
 #
 import webapp2
 
+from encode_decode import EncodeDecodeHandler
+from geo import GeohashHandler
+
+
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+        html = '''
+        Utilies:<br />
+        <a href="/encode">Encode/Decode</a><br />
+        <a href="/geohash">Geohash</a><br />
+        '''
+        self.response.write(html)
+
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/', MainHandler),
+    ('/encode', EncodeDecodeHandler),
+    ('/decode', EncodeDecodeHandler),
+    ('/geohash', GeohashHandler),
 ], debug=True)
