@@ -23,7 +23,6 @@ from geo import GeohashHandler
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         html = '''
-        Utilies:<br />
         <a href="/encode">Encode/Decode</a><br />
         <a href="/geohash">Geohash</a><br />
         '''
