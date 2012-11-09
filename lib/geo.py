@@ -1,6 +1,6 @@
 import webapp2
 
-import geohash
+from external import geohash
 
 
 class GeohashHandler(webapp2.RequestHandler):  

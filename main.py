@@ -16,8 +16,9 @@
 #
 import webapp2
 
-from encode_decode import EncodeDecodeHandler
-from geo import GeohashHandler
+from lib.encode_decode import EncodeDecodeHandler
+from lib.geo import GeohashHandler
+from lib.json_formatter import JSONFormatterHandler
 
 
 class MainHandler(webapp2.RequestHandler):
@@ -25,6 +26,7 @@ class MainHandler(webapp2.RequestHandler):
         html = '''
         <a href="/encode">Encode/Decode</a><br />
         <a href="/geohash">Geohash</a><br />
+        <a href="/json_formatter">JSON Formatter</a><br />
         '''
         self.response.write(html)
 
@@ -34,4 +36,5 @@ app = webapp2.WSGIApplication([
     ('/encode', EncodeDecodeHandler),
     ('/decode', EncodeDecodeHandler),
     ('/geohash', GeohashHandler),
+    ('/json_formatter', JSONFormatterHandler),
 ], debug=True)

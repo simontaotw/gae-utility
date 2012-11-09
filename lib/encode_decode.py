@@ -16,7 +16,7 @@ class EncodeDecodeHandler(webapp2.RequestHandler):
 
         html = '''
         <form action="/encode" method="get">
-        <textarea name="url" rows="10" cols="50">%s</textarea><br />
+        <textarea name="url" rows="10" cols="50" placeholder="http://www.google.com">%s</textarea><br />
         <input type="submit" name="action" value="encode">
         <input type="submit" name="action" value="decode">
         </form>
