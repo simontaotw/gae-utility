@@ -15,7 +15,7 @@ class JSONFormatterHandler(webapp2.RequestHandler):
         html= '''
         <form action="/json_formatter" method="get">
         <textarea name="text" rows="20" cols="100" placeholder="{&quot;hello&quot;: &quot;world&quot;}">%s</textarea><br />
-        <input type="text" name="url" size="140" placeholder="url"><br />
+        <input type="text" name="url" size="140" placeholder="http://gae-utility.appspot.com/static/json_example.json"><br />
         <input type="submit">
         </form>
         %s
