@@ -5,6 +5,9 @@ from external import geohash
 
 class GeohashHandler(webapp2.RequestHandler):  
     def get(self):
+        self.post()
+
+    def post(self):
         hash_value = ''
         coordinates = self.request.get('coordinates', '')
         if coordinates:
@@ -13,7 +16,7 @@ class GeohashHandler(webapp2.RequestHandler):
             hash_value = geohash.encode(float(lat), float(lng))
 
         html = '''
-        <form action="/geohash" method="get">
+        <form action="/geohash" method="post">
         <input type="text" name="coordinates" placeholder="37.7,-122.4" value="%s">
         <input type="submit" value="hash">
         </form>
